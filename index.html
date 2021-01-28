@@ -130,7 +130,6 @@
         });
       }
 
-      // Case Increasing Function
       function handleProductChange(product, isIncrease) {
         const productInput = document.getElementById(product + "-quantity");
         const productInputNumber = parseInt(productInput.value);
@@ -152,29 +151,9 @@
         if (product == "case") {
           productTotal = productInputNew * 59;
         }
-
         document.getElementById(product + "-price").innerText = productTotal;
       }
 
-      // Phone Increasing Function
-      function handlePhoneChange(isIncrease) {
-        const phoneInput = document.getElementById("phone-quantity");
-        const phoneInputNumber = parseFloat(phoneInput.value);
-
-        let phoneInputNew = phoneInputNumber;
-        if (isIncrease == true) {
-          phoneInputNew = phoneInputNumber + 1;
-        }
-        if (isIncrease == false && phoneInputNew > 0) {
-          phoneInputNew = phoneInputNumber - 1;
-        }
-        phoneInput.value = phoneInputNew;
-
-        const phoneTotalPrice = phoneInputNew * 1219;
-        document.getElementById("phone-price").innerText = phoneTotalPrice;
-      }
-
-      // // Case Increasing Function
       // function handleProductChange(isIncrease) {
       //   const caseInput = document.getElementById("case-quantity");
       //   const caseInputNumber = parseInt(caseInput.value);
@@ -192,7 +171,6 @@
       //   document.getElementById("case-price").innerText = caseTotalPrice;
       // }
 
-      // // Phone Increasing Function
       // function handlePhoneChange(isIncrease) {
       //   const phoneInput = document.getElementById("phone-quantity");
       //   const phoneInputNumber = parseFloat(phoneInput.value);
