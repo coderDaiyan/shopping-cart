@@ -106,9 +106,9 @@
                 </div>
 
                 <div class="col-md-4 status">
-                  <h5>$1,278</h5>
-                  <h5>$0</h5>
-                  <h5>$1,278</h5>
+                  <h5>$ <span id="total-price">1,278</span></h5>
+                  <h5>$ <span id="tax-amount">0</span></h5>
+                  <h5>$ <span id="grand-total">1,278</span></h5>
                 </div>
               </div>
             </div>
@@ -130,9 +130,28 @@
         });
       }
 
-      function handleProductChange(product, isIncrease) {
+      function calculateTotal() {
+        const phoneInput = getInputValue("phone");
+        const caseInput = getInputValue("case");
+
+        const totalPrice = phoneInput * 1219 + caseInput * 59;
+        document.getElementById("total-price").innerText = totalPrice;
+
+        const tax = Math.round(totalPrice * 0.1);
+        document.getElementById("tax-amount").innerText = tax;
+
+        const grandTotal = totalPrice + tax;
+        document.getElementById("grand-total").innerText = grandTotal;
+      }
+
+      function getInputValue(product) {
         const productInput = document.getElementById(product + "-quantity");
         const productInputNumber = parseInt(productInput.value);
+        return productInputNumber;
+      }
+
+      function handleProductChange(product, isIncrease) {
+        const productInputNumber = getInputValue(product);
 
         let productInputNew = productInputNumber;
         if (isIncrease == true) {
@@ -141,7 +160,7 @@
         if (isIncrease == false && productInputNew > 0) {
           productInputNew = productInputNumber - 1;
         }
-        productInput.value = productInputNew;
+        document.getElementById(product + "-quantity").value = productInputNew;
 
         // const caseTotalPrice = caseInputNew * 59;
         let productTotal = 0;
@@ -152,6 +171,7 @@
           productTotal = productInputNew * 59;
         }
         document.getElementById(product + "-price").innerText = productTotal;
+        calculateTotal();
       }
 
       // function handleProductChange(isIncrease) {
