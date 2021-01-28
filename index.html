@@ -130,6 +130,7 @@
         });
       }
 
+      // Calculating the total
       function calculateTotal() {
         const phoneInput = getInputValue("phone");
         const caseInput = getInputValue("case");
@@ -150,6 +151,7 @@
         return productInputNumber;
       }
 
+      // Handle Product Changing
       function handleProductChange(product, isIncrease) {
         const productInputNumber = getInputValue(product);
 
@@ -174,74 +176,11 @@
         calculateTotal();
       }
 
-      // function handleProductChange(isIncrease) {
-      //   const caseInput = document.getElementById("case-quantity");
-      //   const caseInputNumber = parseInt(caseInput.value);
-
-      //   let caseInputNew = caseInputNumber;
-      //   if (isIncrease == true) {
-      //     caseInputNew = caseInputNumber + 1;
-      //   }
-      //   if (isIncrease == false && caseInputNew > 0) {
-      //     caseInputNew = caseInputNumber - 1;
-      //   }
-      //   caseInput.value = caseInputNew;
-
-      //   const caseTotalPrice = caseInputNew * 59;
-      //   document.getElementById("case-price").innerText = caseTotalPrice;
-      // }
-
-      // function handlePhoneChange(isIncrease) {
-      //   const phoneInput = document.getElementById("phone-quantity");
-      //   const phoneInputNumber = parseFloat(phoneInput.value);
-
-      //   let phoneInputNew = phoneInputNumber;
-      //   if (isIncrease == true) {
-      //     phoneInputNew = phoneInputNumber + 1;
-      //   }
-      //   if (isIncrease == false && phoneInputNew > 0) {
-      //     phoneInputNew = phoneInputNumber - 1;
-      //   }
-      //   phoneInput.value = phoneInputNew;
-
-      //   const phoneTotalPrice = phoneInputNew * 1219;
-      //   document.getElementById("phone-price").innerText = phoneTotalPrice;
-      // }
-
       // iPhone Case Remove Item
-
       removingItem("case-remove", "case-item");
 
       // iPhone 11 Black Remove Item
-
       removingItem("phone-remove", "phone-item");
-
-      // // iPhone 11 Black Event Handler
-      // document
-      //   .getElementById("phone-increment")
-      //   .addEventListener("click", function () {
-      // const phoneInput = document.getElementById("phone-quantity");
-      // const phoneInputNumber = parseFloat(phoneInput.value);
-
-      // const phoneInputNew = phoneInputNumber + 1;
-      // phoneInput.value = phoneInputNew;
-
-      // const phoneTotalPrice = phoneInputNew * 1219;
-      // document.getElementById("phone-price").innerText = phoneTotalPrice;
-      //   });
-
-      // document
-      //   .getElementById("phone-decrement")
-      //   .addEventListener("click", function () {
-      //     const phoneInput = document.getElementById("phone-quantity");
-      //     const phoneInputNumber = parseFloat(phoneInput.value);
-
-      //     const phoneInputNew = phoneInputNumber - 1;
-      //     phoneInput.value = phoneInputNew;
-
-      //     const phoneTotalPrice = phoneInputNew * 1219;
-      //     document.getElementById("phone-price").innerText = phoneTotalPrice;
-      //   });
     </script>
   </body>
 </html>
