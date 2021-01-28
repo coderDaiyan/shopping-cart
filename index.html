@@ -59,11 +59,12 @@
                       <i class="fas fa-minus"></i>
                     </button>
                     <input
+                      id="case-quantity"
                       type="text"
                       class="form-control text-center"
                       value="1"
                     />
-                    <button class="btn btn-default">
+                    <button id="case-increment" class="btn btn-default">
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
@@ -97,6 +98,16 @@
         </div>
       </div>
     </section>
-    <script></script>
+    <script>
+      document
+        .getElementById("case-increment")
+        .addEventListener("click", function () {
+          const caseInput = document.getElementById("case-quantity");
+          const caseInputNumber = parseInt(caseInput.value);
+
+          const caseInputNew = caseInputNumber + 1;
+          caseInput.value = caseInputNew;
+        });
+    </script>
   </body>
 </html>
